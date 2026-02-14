@@ -1,21 +1,25 @@
+---
+layout: default
+title: Blog
+---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>&Phi;&Pi;&Beta;2 | Home</title>
+    <title>&Phi;&Pi;&Beta;2 | Posts</title>
     <meta name="description" content="Clean, modern, responsive website scaffold using Node, Sass and Bootstrap 5."/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="dist/css/main.css" />
-    <link rel="icon" type="image/x-icon" href="img/phipibetaicon.png" />
+    <link rel="stylesheet" href="/dist/css/main.css" />
+    <link rel="icon" type="image/x-icon" href="/img/phipibetaicon.png" />
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3" aria-label="Main navigation">
         <div class="container">
           <a class="navbar-brand d-flex align-items-center" href="/">
-            <img src="img/phipibetaicon.png" alt="Logo" width="60"/>
+            <img src="/img/phipibetaicon.png" alt="Logo" width="60"/>
             <span class="ms-2">&Phi;&Pi;&Beta;<span class="text-primary">2</span></span>
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,66 +54,29 @@
     <main>
       <section class="hero py-5 text-center text-light" id="home">
         <div class="container py-5">
-          <h1 class="display-5 fw-bold">Built with freedom in mind!</h1>
+          <h1 class="display-5 fw-bold">Lastest Posts</h1>
           <p class="lead mb-4">
-            "A society that gives up freedom for safety will lose both."
+            Welcome to our blog page!, Here you can find all of our latest news and updates about our website, we also have a contact form on the blog page so you can contact us if you have any questions or suggestions for the website.
           </p>
-          <a href="Link.html" class="btn btn-secondary btn-lg">Go To Links</a>
         </div>
       </section>
 
-      <section id="features" class="py-5">
+      <section id="Posts" class="py-5">
         <div class="container">
-          <h2 class="h3 mb-4">Features</h2>
+          <h2 class="h3 mb-4">Posts:</h2>
           <div class="row gy-4">
+            {% for post in site.posts %}
             <div class="col-md-4">
               <div class="card h-100 shadow-sm p-3">
                 <div class="card-body">
-                  <h3 class="h5">Proxies</h3>
+                  <h3 class="h5"><a class="nav-link" href="{{ post.url }}">{{ post.title }}</a></h3>
                   <p class="mb-0">
-                    We have proxies that you can use to access any website that the school blocks or blocked (like Cool Math Games).
+                    {{ post.excerpt }}
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="card h-100 shadow-sm p-3">
-                <div class="card-body">
-                  <h3 class="h5">Chat Place</h3>
-                  <p class="mb-0">
-                    We also have a chat place with the hack.chat website also just so you know it's infinte, so be careful.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card h-100 shadow-sm p-3">
-                <div class="card-body">
-                  <h3 class="h5">Cheats</h3>
-                  <p class="mb-0">
-                    We have cheats for many different games that the teacher hosts (like blooket).
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="py-5 bg-light">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <h2 class="h3">About</h2>
-              <p class="lead mb-0">
-                We focus on giving you the best experience possible while using our website. We constantly improve the website to add new stuff and fix bugs.
-              </p>
-            </div>
-            <div class="col-lg-6 mt-4 mt-lg-0">
-              <p>
-                Have a problem or want to join the cause, try this form to sign up: <a href="https://form.jotform.com/260437744319057">Job</a> or you can contact us through email through the blog.</a>
-              </p>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </section>
@@ -121,12 +88,13 @@
         <div>
           <a href="/" class="me-3" aria-label="Home">Home</a>
           <a href="Link.html" class="me-3" aria-label="Links">Links</a>
+          <a href="/news/index.html" class="me-3" aria-label="Blog">Blog</a>
           <a href="https://form.jotform.com/260437744319057" aria-label="Contact Us">Job Application</a>
         </div>
       </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
-    <script src="js/main.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>
