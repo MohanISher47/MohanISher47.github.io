@@ -68,12 +68,10 @@ title: Blog
             {% for post in site.posts %}
             <div class="col-md-4">
               <div class="card h-100 shadow-sm">
-                <div class="card-body">
                   <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-                  <p class="mb-0">
+                  <p>
                     {{ post.excerpt }}
                   </p>
-                </div>
               </div>
             </div>
             {% endfor %}
