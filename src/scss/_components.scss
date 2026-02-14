@@ -1,0 +1,57 @@
+// Component overrides and custom utilities
+
+body {
+  font-family: $font-family-sans;
+  font-size: $base-font-size;
+  color: #0f172a;
+}
+
+.hero {
+  background: linear-gradient(180deg, rgba(37,99,235,0.9), rgba(0, 81, 255, 0.8));
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+  box-shadow: $shadow-soft;
+}
+
+.brand-logo {
+  font-size: 1.4rem;
+}
+
+.card {
+  border: none;
+  border-radius: 14px;
+}
+
+/* Smooth link hover */
+a { transition: color .18s ease, transform .18s ease; }
+a:hover { transform: translateY(-2px); }
+
+/* Form */
+.form-control:invalid { border-color: #dc3545; }
+
+/* Responsive container cap */
+.container { max-width: $container-max; }
+
+/* Pricing toggle buttons: non-active text is black; active uses brand color */
+.price-toggle {
+  color: #000 !important;
+  background-color: white;
+  border-color: rgba(0,0,0,0.12);
+}
+.price-toggle:hover {
+  color: #000 !important;
+  transform: translateY(-1px);
+}
+.price-toggle.active {
+  color: #fff !important;
+  background-color: grey !important;
+  border-color: $brand !important;
+  box-shadow: 0 6px 18px rgba(166, 219, 19, 0.89);
+}
+
+/* Ensure billing unit labels are visible */
+.billing-unit {
+  color: $muted;
+  font-size: 0.9rem;
+  margin-left: 0.35rem;
+}

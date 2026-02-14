@@ -1,0 +1,15 @@
+// NOTE: Using @import for now to keep variable scope simple and compatible
+@import 'variables';
+@import 'bootstrap/scss/bootstrap';
+@import 'components';
+
+/* Project-wide small utilities */
+* { box-sizing: border-box; }
+
+/* Accessibility helpers */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+button-secondary {
+  color: $brand;
+  border-color: $brand;
+}

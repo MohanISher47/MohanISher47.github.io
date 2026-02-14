@@ -1,0 +1,17 @@
+{
+  "name": "good-website",
+  "version": "1.0.0",
+  "description": "Modern responsive website scaffolded with Node/npm, Sass and Bootstrap 5.",
+  "private": true,
+  "scripts": {
+    "build:sass": "sass --load-path=./node_modules src/scss:dist/css --no-source-map --style=expanded",
+    "watch:sass": "sass --load-path=./node_modules --watch src/scss:dist/css --style=expanded",
+    "dev": "npm run build:sass && npm run watch:sass"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
+}
