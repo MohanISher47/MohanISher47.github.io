@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ post.title }}</title>
+  <link rel="stylesheet" href="{{ 'dist/css/main.css' | relative_url }}">
+</head>
+<body>
+
+  <header>
+    <h1>{{ post.title }}</h1>
+  </header>
+
+  <main>
+    {{ content }}
+
+    <!-- Styled Button -->
+    <div class="post-button-container">
+      <a href="{{ '/news/index.html' | relative_url }}" class="custom-button">⬅ Back to Home</a>
+    </div>
+  </main>
+
+</body>
+</html>
