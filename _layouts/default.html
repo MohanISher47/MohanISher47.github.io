@@ -1,65 +1,18 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>&Phi;&Pi;&Beta;2 | Posts</title>
-    <meta name="description" content="Clean, modern, responsive website scaffold using Node, Sass and Bootstrap 5."/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="/dist/css/main.css" />
-    <link rel="icon" type="image/x-icon" href="/img/phipibetaicon.png" />
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3" aria-label="Main navigation">
-        <div class="container">
-          <a class="navbar-brand d-flex align-items-center" href="/">
-            <img src="/img/phipibetaicon.png" alt="Logo" width="60"/>
-            <span class="ms-2">&Phi;&Pi;&Beta;<span class="text-primary">2</span></span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="mainNav">
-            <ul class="navbar-nav ms-auto gap-2">
-              <li class="nav-item">
-                <a class="nav-link" href="#features">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Link.html" aria-label="Links">Links</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="news/index.html" aria-label="News">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="hack.chat/?phipibeta" aria-label="Hack Chat">Chatplace</a>
-              </li>         
-              <li class="nav-item">
-                <a class="nav-link" href="https://form.jotform.com/260437744319057" aria-label="Job Application" target="_blank">Job Application</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <footer class="py-4 bg-white border-top">
-      <div class="container d-flex justify-content-between align-items-center">
-        <small class="text">©&Phi;&Pi;&Beta;2 2025-2026</small>
-        <div>
-          <a href="/" class="me-3" aria-label="Home">Home</a>
-          <a href="Link.html" class="me-3" aria-label="Links">Links</a>
-          <a href="/news/index.html" class="me-3" aria-label="Blog">Blog</a>
-          <a href="https://form.jotform.com/260437744319057" aria-label="Contact Us">Job Application</a>
-        </div>
-      </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
-    <script src="/js/main.js"></script>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <h1>{{ page.title }}</h1>
+    <section>
+      {{ content }}
+    </section>
   </body>
 </html>
