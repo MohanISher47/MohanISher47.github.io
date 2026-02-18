@@ -7,7 +7,8 @@ discription: How proxy Website work, what is it, and why is it.
 categories: [internet, technology, proxy]
 ---
 
-# What Is a Proxy Website?
+# How Proxies Website Works
+## What Is a Proxy Website?
 
 A proxy website acts as a **middleman** between your browser and the internet. Instead of your device directly visiting a website, the proxy does it on your behalf and then sends the content back to you.
 

@@ -2,51 +2,48 @@
 layout: default
 title: Blog
 ---
+
 <section id="Posts" class="py-5 bg-light">
   <div class="container">
-    <div class="text-center mb-5">
+    <div class="text-center mb-4">
       <h2 class="fw-bold">&Phi;&Pi;&Beta;2 Blog</h2>
-      <p class="text-muted">
-        Browse posts by category
-      </p>
+      <p class="text-muted">Filter posts by category</p>
     </div>
-    {% for category in site.categories %}
-    <div class="mb-5">
-      <h3 class="h4 fw-semibold mb-4 text-capitalize">
+    <div class="d-flex flex-wrap justify-content-center gap-2 mb-5">
+      <button class="btn btn-dark btn-sm filter-btn active" data-filter="all">
+        All
+      </button>
+      {% for category in site.categories %}
+      <button class="btn btn-outline-dark btn-sm filter-btn" data-filter="{{ category[0] }}">
         {{ category[0] }}
-      </h3>
-      <div class="row g-4">
-        {% for post in category[1] %}
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body d-flex flex-column">
-              <h4 class="h6 fw-semibold mb-2">
-                <a href="{{ post.url }}" class="text-decoration-none text-dark">
-                  {{ post.title }}
-                </a>
-              </h4>
-              <p class="text-muted small mb-2">
-                {{ post.date | date: "%B %d, %Y" }}
-              </p>
-              <p class="mb-3 flex-grow-1">
-                {{ post.excerpt }}
-              </p>
-              <div class="mb-3">
-                {% for cat in post.categories %}
-                  <span class="badge bg-secondary me-1">
-                    {{ cat }}
-                  </span>
-                {% endfor %}
-              </div>
-              <a href="{{ post.url }}" class="btn btn-sm btn-outline-dark mt-auto">
-                Read More →
+      </button>
+      {% endfor %}
+    </div>
+    <div class="row g-4">
+      {% for post in site.posts %}
+      <div class="col-md-4 post-card"
+           data-categories="{{ post.categories | join: ' ' }}">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body d-flex flex-column">
+            <h3 class="h6 fw-semibold mb-2">
+              <a href="{{ post.url }}" class="text-decoration-none text-dark">
+                {{ post.title }}
               </a>
-            </div>
+            </h3>
+            <p class="text-muted small mb-2">
+              {{ post.date | date: "%B %d, %Y" }}
+            </p>
+            <p class="mb-4 flex-grow-1">
+              {{ post.excerpt }}
+            </p>
+            <a href="{{ post.url }}" class="btn btn-sm btn-outline-dark mt-auto">
+              Read More →
+            </a>
           </div>
         </div>
-        {% endfor %}
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </section>
+<script src="/js/filter.js"></script>
