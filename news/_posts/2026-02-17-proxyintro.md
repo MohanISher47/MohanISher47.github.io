@@ -15,6 +15,7 @@ A proxy website acts as a **middleman** between your browser and the internet. I
 This means the website you’re trying to view only sees the **proxy’s information**, not yours.
 
 ---
+<!--more-->
 
 ## How Proxies Handle Requests
 

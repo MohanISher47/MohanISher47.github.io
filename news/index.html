@@ -34,7 +34,7 @@ title: Blog
               {{ post.date | date: "%B %d, %Y" }}
             </p>
             <p class="mb-4 flex-grow-1">
-              {{ post.excerpt }}
+              {{ post.excerpt | strip_html | truncate: 160 }}
             </p>
             <a href="{{ post.url }}" class="btn btn-sm btn-outline-dark mt-auto">
               Read More →
@@ -46,4 +46,17 @@ title: Blog
     </div>
   </div>
 </section>
+<style>
+  .post-card {
+    display: flex;
+  }
+
+  .post-card .card {
+    width: 100%;
+  }
+
+  .post-card p {
+    overflow: hidden;
+  }
+</style>
 <script src="/js/filter.js"></script>
