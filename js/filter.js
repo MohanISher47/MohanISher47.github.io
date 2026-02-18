@@ -16,11 +16,10 @@
 
       posts.forEach(post => {
         const categories = post.dataset.categories;
-
         if (filter === "all" || categories.includes(filter)) {
-          post.style.display = "";     // ✅ let Bootstrap control layout
+          post.style.display = "";
         } else {
-          post.style.display = "none"; // ✅ hide cleanly
+          post.style.display = "none";
         }
       });
     });
