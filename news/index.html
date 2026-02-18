@@ -6,8 +6,8 @@ title: Blog
 <section id="Posts" class="py-5">
   <div class="container">
     <h2 class="h3 mb-4">Latest Posts</h2>
-    {% for post in site.posts %}
     <div class="row gy-4">
+      {% for post in site.posts limit:3 %}
       <div class="col-md-4">
         <div class="card h-100 shadow-sm p-3">
           <div class="card-body">
@@ -16,7 +16,7 @@ title: Blog
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </section>
