@@ -3,20 +3,51 @@ layout: default
 title: Blog
 ---
 
-<section id="Posts" class="py-5">
+<section id="Posts" class="py-5 bg-light">
   <div class="container">
-    <h2 class="h3 mb-4">Latest Posts</h2>
-    <div class="row gy-4">
-      {% for post in site.posts limit:3 %}
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm p-3">
-          <div class="card-body">
-            <h3 class="h5"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-            <p class="mb-0">{{ post.excerpt }}</p>
+    <div class="text-center mb-5">
+      <h2 class="fw-bold">&Phi;&Pi;&Beta;2 Blog</h2>
+      <p class="text-muted">
+        Browse posts by category
+      </p>
+    </div>
+    {% for category in site.categories %}
+    <div class="mb-5">
+      <h3 class="h4 fw-semibold mb-4 text-capitalize">
+        {{ category[0] }}
+      </h3>
+      <div class="row g-4">
+        {% for post in category[1] %}
+        <div class="col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h4 class="h6 fw-semibold mb-2">
+                <a href="{{ post.url }}" class="text-decoration-none text-dark">
+                  {{ post.title }}
+                </a>
+              </h4>
+              <p class="text-muted small mb-2">
+                {{ post.date | date: "%B %d, %Y" }}
+              </p>
+              <p class="mb-3 flex-grow-1">
+                {{ post.excerpt }}
+              </p>
+              <div class="mb-3">
+                {% for cat in post.categories %}
+                  <span class="badge bg-secondary me-1">
+                    {{ cat }}
+                  </span>
+                {% endfor %}
+              </div>
+              <a href="{{ post.url }}" class="btn btn-sm btn-outline-dark mt-auto">
+                Read More →
+              </a>
+            </div>
           </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
+    {% endfor %}
   </div>
 </section>
