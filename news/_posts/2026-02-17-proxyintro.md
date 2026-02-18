@@ -3,6 +3,7 @@ layout: post
 title: "How Proxy Websites Work"
 date: 2026-02-17
 author: T.A.D
+discription: How proxy Website work, what is it, and why is it.
 categories: [internet, technology, proxy]
 ---
 
