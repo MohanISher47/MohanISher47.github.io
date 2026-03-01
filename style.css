@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 2px;
+    padding: 20px;
+}
+
+.bookmarklets-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 30px;
+}
+
+.bookmarklets-list .bookmarklet {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bookmarklets-list .bookmarklet:hover {
+    background-color: #00000036;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
